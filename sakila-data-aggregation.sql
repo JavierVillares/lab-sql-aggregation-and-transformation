@@ -10,10 +10,14 @@ FROM film;
 
 SELECT AVG(length) AS avg_duration;
 
-SELECT 
-    FLOOR(AVG(length) / 60) AS hours,
-    ROUND(AVG(length) % 60 ,0)   AS minutes
+SELECT MIN(length) AS min_duration,
+       MAX(length) AS max_duration
 FROM film;
+
+SELECT 
+    CONCAT(FLOOR(AVG(length) / 60), ' hours ', AVG(length) % 60, ' minutes') AS avg_duration
+FROM film;
+
 
 SELECT
 rental_date,
