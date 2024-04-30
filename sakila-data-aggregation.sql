@@ -2,20 +2,12 @@ USE sakila;
 
 SHOW tables;
 
-SELECT MAX(length)  AS max_duration
-FROM film;
-
-SELECT MIN(length)  AS min_duration
-FROM film;
-
-SELECT AVG(length) AS avg_duration;
-
 SELECT MIN(length) AS min_duration,
        MAX(length) AS max_duration
 FROM film;
 
 SELECT 
-    CONCAT(FLOOR(AVG(length) / 60), ' hours ', AVG(length) % 60, ' minutes') AS avg_duration
+    CONCAT(FLOOR(AVG(length) / 60), ' hours ', ROUND(AVG(length) % 60, 2), ' minutes') AS avg_duration
 FROM film;
 
 
