@@ -26,14 +26,17 @@ DATEDIFF(return_date, rental_date) AS days_rented
 FROM rental;
 
 SELECT 
-    MONTHNAME(rental_date) AS rental_month,
-    DAYNAME(rental_date) AS rental_weekday
+    MONTHNAME(rental_date) AS MONTH,
+    DAYNAME(rental_date) AS WEEKDAY
 FROM rental
 LIMIT 20;
 
 SELECT
-    DAYNAME(rental_date) AS weekend,
-    DAYNAME(rental_date) AS workday
+    rental_date,
+    CASE
+        WHEN DAYOFWEEK(rental_date) IN (1, 7) THEN 'weekend'
+        ELSE 'workday'
+    END AS DAY_TYPE
 FROM rental;
 
 SELECT 
