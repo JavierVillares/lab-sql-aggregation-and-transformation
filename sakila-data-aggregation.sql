@@ -37,10 +37,11 @@ SELECT
 FROM rental;
 
 SELECT 
-	title,
-	IFNULL(rental_duration, 0) AS 'Not Available'
+    title,
+    IFNULL(rental_duration, 0) AS 'Not Available'
 FROM film
-    ORDER BY rental_duration ASC;
+ORDER BY title ASC;
+
 
 SELECT
 	COUNT(DISTINCT film_id)
