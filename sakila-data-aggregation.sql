@@ -38,7 +38,7 @@ FROM rental;
 
 SELECT 
     title,
-    IFNULL(rental_duration, 0) AS 'Not Available'
+    IFNULL(rental_duration, 2) AS 'Not Available'
 FROM film
 ORDER BY title ASC;
 
