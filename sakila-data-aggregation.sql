@@ -12,7 +12,7 @@ SELECT AVG(length) AS avg_duration;
 
 SELECT 
     FLOOR(AVG(length) / 60) AS hours,
-    ROUND(AVG(length) % 60 ,2)   AS minutes
+    ROUND(AVG(length) % 60 ,0)   AS minutes
 FROM film;
 
 SELECT
