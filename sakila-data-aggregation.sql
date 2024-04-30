@@ -2,10 +2,10 @@ USE sakila;
 
 SHOW tables;
 
-SELECT MIN(length)  AS min_duration
+SELECT MAX(length)  AS max_duration
 FROM film;
 
-SELECT MAX(length)  AS max_duration
+SELECT MIN(length)  AS min_duration
 FROM film;
 
 SELECT AVG(length) AS avg_duration;
